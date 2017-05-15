@@ -9,8 +9,15 @@
   </head>
 
   <body>
-    <%= link_to 'courses', courses_path %>
-    <%= link_to 'people', people_path %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= link_to 'courses', courses_path %>
+  <%= link_to 'people', people_path %>
+  <% if person_signed_in? %>
+      <div>
+        <%= 'ingresado!' %>
+      </div>
+  <% end %>
     <% if @course %>
       <div>
         <%= render 'courses/navbar', course: @course %>
